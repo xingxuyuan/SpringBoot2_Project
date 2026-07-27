@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;jxc-admin&apos; to &apos;SpringBoot2_Project&apos;&#x0D;&#x0A;- Original element: &apos;jxc-admin&apos;&#x0D;&#x0A;- Renamed element: &apos;jxc-admin&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;jxc-admin&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=jxc-admin" name="SpringBoot2_Project" references="true" stamp="1785150456044" version="1.0"/>
+</session>
