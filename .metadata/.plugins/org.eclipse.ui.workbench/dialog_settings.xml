@@ -7,8 +7,8 @@
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="99"/>
-		<item key="DIALOG_Y_ORIGIN" value="156"/>
+		<item key="DIALOG_X_ORIGIN" value="11"/>
+		<item key="DIALOG_Y_ORIGIN" value="11"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item key="dialogHeight" value="-1"/>
@@ -21,5 +21,12 @@
 		</list>
 		<list key="textArray">
 		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="-173"/>
+		<item key="DIALOG_Y_ORIGIN" value="-257"/>
+		<item key="DIALOG_WIDTH" value="1048"/>
+		<item key="DIALOG_HEIGHT" value="1072"/>
+		<item key="DIALOG_FONT_NAME" value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI"/>
 	</section>
 </section>

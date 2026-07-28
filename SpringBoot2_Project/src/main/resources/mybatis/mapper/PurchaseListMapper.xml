@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.seiryo.mapper.PurchaseListMapper">
+
+    <!-- 商品采购统计查询（多表联查） -->
+    <select id="selectPurchaseCount" resultType="com.edu.seiryo.model.CountResultModel">
+        SELECT
+            pl.purchase_number AS purchaseNumber,
+            pl.purchase_date AS purchaseDate,
+            s.id AS supplierId,
+            s.name AS supplierName,
+            plg.name AS goodsName,
+            plg.code AS code,
+            plg.model AS model,
+            plg.num AS num,
+            plg.price AS price,
+            plg.total AS total
+        FROM "t_purchase_list" pl
+        LEFT JOIN "t_supplier" s ON pl.supplier_id = s.id
+        LEFT JOIN "t_purchase_list_goods" plg ON pl.id = plg.purchase_list_id
+        WHERE pl.is_del = 0
+        <!-- 按供应商筛选 -->
+        <if test="query.supplierId != null">
+            AND pl.supplier_id = #{query.supplierId}
+        </if>
+        <!-- 按日期范围筛选 -->
+        <if test="query.startDate != null and query.startDate != ''">
+            AND pl.purchase_date &gt;= TO_DATE(#{query.startDate}, 'YYYY-MM-DD')
+        </if>
+        <if test="query.endDate != null and query.endDate != ''">
+            AND pl.purchase_date &lt;= TO_DATE(#{query.endDate}, 'YYYY-MM-DD')
+        </if>
+        <!-- 按商品名称模糊筛选 -->
+        <if test="query.goodsName != null and query.goodsName != ''">
+            AND plg.name LIKE '%' || #{query.goodsName} || '%'
+        </if>
+        ORDER BY pl.purchase_date DESC
+    </select>
+
+</mapper>
